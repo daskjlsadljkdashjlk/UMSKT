@@ -33,7 +33,7 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
         with:
-          vs-version: '[17.6,17.7)' # This is the last version of VS that supports v141_xp 😔
+          vs-version: '[16.4,16.5)'
     
       - uses: seanmiddleditch/gha-setup-vsdevenv@master
         with:
