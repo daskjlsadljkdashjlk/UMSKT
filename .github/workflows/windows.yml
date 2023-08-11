@@ -30,6 +30,11 @@ jobs:
   build-32bit:
     runs-on: windows-latest
     steps:
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        with:
+          vs-version: '[17.6,17.7)' # This is the last version of VS that supports v141_xp 😔
+    
       - uses: seanmiddleditch/gha-setup-vsdevenv@master
         with:
           components: "Microsoft.VisualStudio.Component.WinXP"
@@ -49,9 +54,6 @@ jobs:
 
       - name: Checkout Source Tree
         uses: actions/checkout@v3
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
 
       - name: Configure UMSKT
         uses: threeal/cmake-action@v1.2.0
@@ -74,6 +76,11 @@ jobs:
   build-64bit:
     runs-on: windows-latest
     steps:
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        with:
+          vs-version: '[17.6,17.7)' # This is the last version of VS that supports v141_xp 😔
+    
       - uses: seanmiddleditch/gha-setup-vsdevenv@master
         with:
           components: "Microsoft.VisualStudio.Component.WinXP"
@@ -93,9 +100,6 @@ jobs:
 
       - name: Checkout Source Tree
         uses: actions/checkout@v3
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
 
       - name: Configure UMSKT
         uses: threeal/cmake-action@v1.2.0
