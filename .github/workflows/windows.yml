@@ -38,6 +38,7 @@ jobs:
       - uses: seanmiddleditch/gha-setup-vsdevenv@master
         with:
           components: "Microsoft.VisualStudio.Component.WinXP"
+          vswhere: "C:\\ProgramData\\Chocolatey\\bin\\vswhere.exe"
 
       - name: Download And Install 32-bit OpenSSL 3.1.2
         run: |
