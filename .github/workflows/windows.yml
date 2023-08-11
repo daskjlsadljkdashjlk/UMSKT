@@ -31,6 +31,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: seanmiddleditch/gha-setup-vsdevenv@master
+        with:
+          components: "Microsoft.VisualStudio.Component.WinXP"
 
       - name: Download And Install 32-bit OpenSSL 3.1.2
         run: |
@@ -73,6 +75,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: seanmiddleditch/gha-setup-vsdevenv@master
+        with:
+          components: "Microsoft.VisualStudio.Component.WinXP"
           
       - name: Download And Install 64-bit OpenSSL 3.1.2
         run: |
