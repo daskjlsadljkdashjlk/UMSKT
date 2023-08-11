@@ -30,8 +30,10 @@ jobs:
   build-32bit:
     runs-on: windows-latest
     steps:
-      - name: Setup VS2019
-        uses: richardo2016/Setup-MSBuild@releases/clangcl_x_2017/v1
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: '[16.4,16.5)'
         
       - name: Install v141_xp
         uses: seanmiddleditch/gha-setup-vsdevenv@master
